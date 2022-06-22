@@ -1,0 +1,17 @@
+@import './common-scss/variables.scss';
+
+.container{
+    @include phone-only{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px 20px;
+    }
+    @include min769{
+        padding: 0px 20px;
+    }
+
+    @include desktop-xl{
+        width: 1920px;
+    }
+}
+

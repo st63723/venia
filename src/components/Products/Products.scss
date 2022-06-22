@@ -1,0 +1,163 @@
+@import './../../common-scss/variables.scss';
+
+//mixin
+@mixin dark-display{
+    color: $dark-gunmental;
+    display: $display-block;
+}
+
+.products {
+    padding-top: 25px;
+    .hide-lightbox{
+        display: $display-none;
+    }
+    .show-lightbox{
+        position: $position-absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        background: $white-color;
+        &:before {
+            content: '';
+            position: $position-absolute;
+            box-shadow: 0px 8px 16px #aaa;
+            width: 18px;
+            height: 100%;
+        }
+        span.cross-mobile {
+            position: $position-absolute;
+            right: 18px;
+            top: 9px;
+            color: $dark-gunmental;
+            font-size: 20px;
+        }
+         .left-filters-box{
+            display: $display-block;
+        .crumbs{
+            display: $display-none;
+        }
+       }
+    } 
+    .left-filters-box{
+        @include phone-only{
+            display: $display-none;
+            padding-right: 0px;
+        }
+        @include tablet-portrait{
+            display: $display-block;
+            padding-right: 30px;
+        }
+    }
+    select{
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #B5B7BC;
+        width: 200px;
+        color: $dark-gunmental;
+        float: right;
+    }
+    .filters-sort{
+         span{
+            color: #181C24;
+            text-decoration: underline;
+            @include phone-only{
+                padding-right: 10px;
+            }
+            @include min769{
+                padding-right: 10px;
+            }
+         }
+         span.filters-pro img{
+            height: 14px;
+            margin-right: 5px;
+         }
+         .sort{
+            img{
+                height: 13px;
+            }
+            img:last-child{
+                padding-right: 5px;
+            }
+         }
+    }
+    .mobile-view{
+        @include phone-only{
+            display: $display-block;
+            text-align: $t-align-center;
+        }
+        @include min769{
+            display: $display-none;
+        }
+    }
+    .products-box{
+        padding: 25px 0;
+        display: $display-flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        justify-content: space-between;
+        a{
+            text-decoration: $display-none;
+        }
+        .product{
+           
+            @include phone-only{
+                width: 130px;
+                height: 310px;
+            }
+            @include tablet-portrait{
+                width: 260px;
+                height: auto;
+            }
+            @include tablet-landscape{
+                width: 280px;
+                height: auto;
+            }
+            .product-name{
+                @include dark-display;
+                font-family: $muli-semibold;
+                display: $display-block;
+            }
+            .product-price{
+                @include dark-display;
+            }
+            .heart-icon{
+                width: 24px !important;
+                height: 20px;
+                margin-top: 10px;
+            }
+            img{
+                @include phone-only{
+                    width: 130px;
+                    height: 150px;
+                }
+                @include tablet-portrait{
+                    width:280px;
+                    height: 310px;
+                }              
+            }
+        }
+    }
+    .dark-gunmental.semi-bold{
+        @include phone-only{
+            display: $display-block;
+            width: 100%;
+            text-align: $t-align-center;
+            padding-top: 20px;
+        }
+        @include tablet-portrait{
+            display:inherit;
+            width: auto;
+            text-align: left;
+            padding-top: 0px;
+        }
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 768px) {
+    .min768px{
+        width: 25% !important;
+    }
+    .min768pxx{
+        width: 75% !important;
+    }
+}
